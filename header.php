@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package rss2021
+ * @package RSS2021
  */
 
 ?>
@@ -17,6 +17,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+	<!-- RSS2021 specific -->
+    <link rel="stylesheet" href="https://use.typekit.net/kpx8cec.css">
+    <script src="https://kit.fontawesome.com/60dfbc98f0.js" crossorigin="anonymous"></script>
+
 	<?php wp_head(); ?>
 </head>
 
@@ -26,27 +30,14 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'rss2021' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
+		<nav id="site-navigation" class="main-navigation">
 			<?php
 			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$rss2021_description = get_bloginfo( 'description', 'display' );
-			if ( $rss2021_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $rss2021_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+			?>
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'rss2021' ); ?></button>
+			<div id="menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
 			<?php
 			wp_nav_menu(
 				array(
@@ -56,4 +47,17 @@
 			);
 			?>
 		</nav><!-- #site-navigation -->
+        <div id="main-searchbox">
+            <input type="text" placeholder="Search here...">
+        </div>
+		<nav id="mobile-navigation">
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'menu-2',
+					'menu_id'        => 'mobile-menu',
+				)
+			);
+			?>
+		</nav>
 	</header><!-- #masthead -->
