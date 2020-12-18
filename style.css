@@ -602,7 +602,7 @@ footer a {
 /*--------------------------------------------*/
 /* Media Queries */
 
-@media (max-width: 1200px) {
+@media (max-width: 1023px) {
     #banner h1 {
         font-size: 3em;
     }
@@ -611,6 +611,9 @@ footer a {
     }
     #site-navigation ul {
         display: none
+    }
+    .menu-primary-container, #search-icon {
+        display: none;
     }
     #menu-icon {
         display: flex;
