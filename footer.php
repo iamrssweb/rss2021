@@ -90,7 +90,6 @@
             </div>
         </footer>
 </div><!-- #page -->
-<script src="js/menusearch.js"></script>
 
 <?php wp_footer();?>
 

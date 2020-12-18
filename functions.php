@@ -147,13 +147,23 @@ function rss2021_scripts() {
 
 	wp_enqueue_script( 'rss2021-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script('fontawesome', 'https://kit.fontawesome.com/60dfbc98f0.js');
-	wp_enqueue_script('rss2021-js', get_theme_file_uri('/js/rss2021-js.js'), NULL, microtime(), true);
+	wp_enqueue_script('rss2021-js', get_theme_file_uri('/js/menusearch.js'), NULL, microtime(), true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'rss2021_scripts' );
+
+/**
+ * Add a search menu item to the nav menus
+ */
+add_filter( 'wp_nav_menu_items','rss2021_add_search_box', 10, 2 );
+function rss2021_add_search_box( $items, $args ) {
+	// $items .= '<li>' . get_search_form( false ) . '</li>';
+	$items .= '<li><div id="search-icon"> <i class="fas fa-search"></i> </div></li>';
+    return $items;
+}
 
 /**
  * Implement the Custom Header feature.
