@@ -1,10 +1,10 @@
 <?php
 /**
- * rss2021 functions and definitions
+ * RSS2021 functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package rss2021
+ * @package RSS2021
  */
 
 if ( ! defined( '_S_VERSION' ) ) {
@@ -24,7 +24,7 @@ if ( ! function_exists( 'rss2021_setup' ) ) :
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on rss2021, use a find and replace
+		 * If you're building a theme based on RSS2021, use a find and replace
 		 * to change 'rss2021' to the name of your theme in all the template files.
 		 */
 		load_theme_textdomain( 'rss2021', get_template_directory() . '/languages' );
@@ -51,6 +51,7 @@ if ( ! function_exists( 'rss2021_setup' ) ) :
 		register_nav_menus(
 			array(
 				'menu-1' => esc_html__( 'Primary', 'rss2021' ),
+				'menu-2' => esc_html__( 'Mobile', 'rss2021'),
 			)
 		);
 
@@ -112,7 +113,7 @@ add_action( 'after_setup_theme', 'rss2021_setup' );
  * @global int $content_width
  */
 function rss2021_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'rss2021_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'rss2021_content_width', 1920 );
 }
 add_action( 'after_setup_theme', 'rss2021_content_width', 0 );
 
@@ -140,10 +141,13 @@ add_action( 'widgets_init', 'rss2021_widgets_init' );
  * Enqueue scripts and styles.
  */
 function rss2021_scripts() {
+	wp_enqueue_style('adobe-fonts', 'https://use.typekit.net/kpx8cec.css');
 	wp_enqueue_style( 'rss2021-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'rss2021-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'rss2021-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script('fontawesome', 'https://kit.fontawesome.com/60dfbc98f0.js');
+	wp_enqueue_script('rss2021-js', get_theme_file_uri('/js/rss2021-js.js'), NULL, microtime(), true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -177,4 +181,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
