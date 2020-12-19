@@ -19,6 +19,25 @@ RSS2021 is based on Underscores https://underscores.me/, (C) 2012-2020 Automatti
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 */
 
+/* Implementation in Wordpress addtional CSS
+.post-21 .entry-header {
+	color: #ffc222;
+}
+.post-82 .article-container {
+	width: 60%;
+	right: 10em;
+	float: right;
+}
+.post-19 img, .post-17 img, .post-15 img {
+	filter: brightness(100%);
+}
+.post-19 .article-container, .post-17  .article-container, .post-15  .article-container {
+	color: #2c3d4a;
+}
+.post-19, .post-17, .post-15 {
+    min-height: 360px;
+*/
+
 body {
     font-family: myriad-pro, sans-serif;
     font-style: normal;
