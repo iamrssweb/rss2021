@@ -10,11 +10,12 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'post-page-home' ); ?>>
+	<?php rss2021_post_thumbnail(); ?>
+
+    <div class="article-container">
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
-
-	<?php rss2021_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -28,5 +29,6 @@
 		);
 		?>
 	</div><!-- .entry-content -->
+	</div><!-- .article-container -->
 
 </article><!-- #post-<?php the_ID(); ?> -->
