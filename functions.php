@@ -101,6 +101,99 @@ if ( ! function_exists( 'rss2021_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
+
+		/** 
+		 * Gutenberg support
+		 * See https://www.billerickson.net/building-a-gutenberg-website/
+		 */
+		add_theme_support( 'align-wide' );
+
+		// -- Disable custom font sizes 
+		add_theme_support( 'disable-custom-font-sizes' );
+		
+		// -- Editor Font Sizes
+		/*
+		add_theme_support( 'editor-font-sizes', array(
+			array(
+				'name'      => __( 'Small', 'ea_genesis_child' ),
+				'shortName' => __( 'S', 'ea_genesis_child' ),
+				'size'      => 12,
+				'slug'      => 'small'
+			),
+			array(
+				'name'      => __( 'Normal', 'ea_genesis_child' ),
+				'shortName' => __( 'M', 'ea_genesis_child' ),
+				'size'      => 16,
+				'slug'      => 'normal'
+			),
+			array(
+				'name'      => __( 'Large', 'ea_genesis_child' ),
+				'shortName' => __( 'L', 'ea_genesis_child' ),
+				'size'      => 20,
+				'slug'      => 'large'
+			),
+			) );
+		*/
+		// - Disable custom colors
+		add_theme_support( 'disable-custom-colors' );
+		add_theme_support( 'editor-color-palette', array(
+			array(
+				'name' => __( 'RSS Blue' ),
+				'slug' => __( 'rss-blue' ),
+				'color' => '#00b2e2',
+			),
+			array(
+				'name' => __( 'RSS Dark Blue' ),
+				'slug' => __( 'rss-dark-blue' ),
+				'color' => '#007cb0',
+			),
+			array(
+				'name' => __( 'RSS Grey' ),
+				'slug' => __( 'rss-grey' ),
+				'color' => '#2c3d4a',
+			),
+			array(
+				'name' => __( 'RSS Yellow' ),
+				'slug' => __( 'rss-yellow' ),
+				'color' => '#ffc222',
+			),
+			array(
+				'name' => __( 'RSS Red' ),
+				'slug' => __( 'rss-red' ),
+				'color' => '#e22849',
+			),
+			array(
+				'name' => __( 'Roadsign Brown' ),
+				'slug' => __( 'roadsign-brown' ),
+				'color' => '#794500',
+			),
+			array(
+				'name' => __( 'Roadsign Green' ),
+				'slug' => __( 'roadsign-green' ),
+				'color' => '#00703c',
+			),
+			array(
+				'name' => __( 'Roadsign Red' ),
+				'slug' => __( 'roadsign-red' ),
+				'color' => '#e31836',
+			),
+			array(
+				'name' => __( 'Roadsign Blue' ),
+				'slug' => __( 'roadsign-blue' ),
+				'color' => '#007ac1',
+			),
+			array(
+				'name' => __( 'Roadsign Yellow' ),
+				'slug' => __( 'roadsign-yellow' ),
+				'color' => '#ffd000',
+			),
+		) );
+		// Get the editors to use the styles
+		add_theme_support( 'editor-styles' );
+		add_editor_style( 'css/editor-style.css' );
+		
+		// Support block styles
+		add_theme_support( 'wp-block-styles' );
 	}
 endif;
 add_action( 'after_setup_theme', 'rss2021_setup' );
