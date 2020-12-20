@@ -726,6 +726,10 @@ footer a {
     box-shadow: none;
 }
 
+#blogpost .post-thumbnail:hover {
+    box-shadow: none;
+}
+
 /*--------------------------------------------*/
 
 /* Sidebar */
@@ -814,6 +818,10 @@ footer a {
     article .entry-image img {
         width: 100%;
     }
+    article .post-thumbnail img {
+        width: 100%;
+        height: auto;
+    }
     footer, .menu-link {
         flex-direction: column;
         align-items: center;
@@ -878,6 +886,10 @@ footer a {
     }
     article .entry-image img {
         width: 100%;
+    }
+    article .post-thumbnail img {
+        width: 100%;
+        height: auto;
     }
     .post-page-home {
         width: 100%;
