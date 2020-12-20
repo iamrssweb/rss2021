@@ -187,6 +187,16 @@ if ( ! function_exists( 'rss2021_setup' ) ) :
 				'slug' => __( 'roadsign-yellow' ),
 				'color' => '#ffd000',
 			),
+			array(
+				'name' => __( 'white' ),
+				'slug' => __( 'white' ),
+				'color' => '#ffffff',
+			),
+			array(
+				'name' => __( 'black' ),
+				'slug' => __( 'black' ),
+				'color' => '#000000',
+			),
 		) );
 		// Get the editors to use the styles
 		add_theme_support( 'editor-styles' );

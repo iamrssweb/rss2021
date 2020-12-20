@@ -10,15 +10,23 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<!-- thumbnail -->
+	<?php rss2021_post_thumbnail(); ?>
+
 	<header class="entry-header"> This is the_title:
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php rss2021_post_thumbnail(); ?>
-
 	<div class="entry-content">
 		<?php
-		the_content();
+		the_excerpt();
+		// the_content();
+
+		?>
+		<div class="entry-meta">Posted by <?php the_author(); ?> on <?php the_date(); ?></div>
+		<button onclick="window.location.href='<?php the_permalink(); ?>' " class="btn-readmore">Read more....</button>
+		<?php
 
 		wp_link_pages(
 			array(
