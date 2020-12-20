@@ -18,6 +18,33 @@ get_header();
 	<main id="primary" class="site-main">
 
 		<?php
+
+		if ( have_posts() ) {
+
+			$slug = get_post_field( 'post_name', get_post() );
+			// based on the slug of this page, do a query using that as category
+
+			// Front page will only display posts from a given, configurable, category
+			$args = array( 'category_name' => $slug ); 
+ 
+			// Variable to call WP_Query. 
+			$the_query = new WP_Query( $args ); 
+ 
+			if ( $the_query->have_posts() ) {
+			    // Start the Loop 
+				while ( $the_query->have_posts() ) { 
+					$the_query->the_post();
+					// use templates for the guts of what to return in HTML
+    				get_template_part( 'template-parts/content', 'page' );
+	    		} // End the Loop 
+			} else { 
+				// If no posts match this query, output this text. 
+		    	_e( 'Sorry, no posts matched your criteria.', 'textdomain' ); 
+			}
+ 
+			wp_reset_postdata(); 
+		}
+		/*
 		while ( have_posts() ) :
 			the_post();
 
@@ -29,10 +56,11 @@ get_header();
 			endif;
 
 		endwhile; // End of the loop.
+		*/
 		?>
 
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();
