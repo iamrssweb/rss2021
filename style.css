@@ -227,6 +227,20 @@ a:hover {
 /*--------------------------------------------*/
 
 /* Search box */
+/*--------------------------------------------*/
+
+/* Search icon */
+
+#mainsearch-icon {
+    color: white;
+    padding: 0 2em;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#mainsearch-icon:hover {
+    color: #ffc222;
+}
 
 #main-searchbox {
     position: fixed;
@@ -243,6 +257,26 @@ a:hover {
     width: 100%;
 }
 
+#main-searchbox #btn-search{
+    height: 2em;
+    width: 2em;
+    background:white url('img/search-icon.png');
+    background-position:center;
+    background-repeat:no-repeat;
+    position: absolute;
+    right:0;
+    top:0;
+    box-shadow:initial;
+    transition:.4s;
+    cursor:pointer;
+    border:1px solid #ddd;
+}
+  
+#btn-search:hover{
+    background:#ffc222 url('img/search-icon.png');
+    background-position:center;
+    background-repeat:no-repeat;
+}
 /*--------------------------------------------*/
 
 /* Navigation */
@@ -351,21 +385,6 @@ a:hover {
     padding: 0.5em;
     font-size: 1.25em;
     text-align: center;
-}
-
-/*--------------------------------------------*/
-
-/* Search icon */
-
-#search-icon {
-    color: white;
-    padding: 0 2em;
-    cursor: pointer;
-    transition: 0.4s;
-}
-
-#search-icon:hover {
-    color: #ffc222;
 }
 
 /*--------------------------------------------*/
@@ -751,7 +770,7 @@ footer a {
     #site-navigation ul {
         display: none
     }
-    .menu-primary-container, #search-icon {
+    .menu-primary-container, #mainsearch-icon {
         display: none;
     }
     #menu-icon {

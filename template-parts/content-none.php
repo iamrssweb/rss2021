@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying a message that posts cannot be found
+ * Template part for displaying a message that posts cannot be found as a result of a search
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -13,6 +13,8 @@
 	<header class="page-header">
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'rss2021' ); ?></h1>
 	</header><!-- .page-header -->
+
+	Sorry folks, cannot find what you are looking for.
 
 	<div class="page-content">
 		<?php

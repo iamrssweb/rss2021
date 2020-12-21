@@ -12,23 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<!-- thumbnail -->
-	<?php
-	if ( has_post_thumbnail() ) {
-		?><div class="post-thumbnail"><?php
-		the_post_thumbnail(
-			'post-thumbnail',
-			array(
-				'alt' => the_title_attribute(
-					array(
-						'echo' => false,
-					)
-				),
-			)
-		);
-		?></div><?php
-	}
-	?>
-	<?php // rss2021_post_thumbnail(); ?>
+	<?php rss2021_post_thumbnail(); ?>
 
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>

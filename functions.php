@@ -243,7 +243,8 @@ add_action( 'widgets_init', 'rss2021_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
-function rss2021_scripts() {
+if ( ! function_exists( 'rss2021_scripts' ) ) :
+	function rss2021_scripts() {
 	wp_enqueue_style('adobe-fonts', 'https://use.typekit.net/kpx8cec.css');
 	wp_enqueue_style( 'rss2021-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'rss2021-style', 'rtl', 'replace' );
@@ -256,17 +257,19 @@ function rss2021_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+endif;
 add_action( 'wp_enqueue_scripts', 'rss2021_scripts' );
 
 /**
  * Add a search menu item to the nav menus
  */
-add_filter( 'wp_nav_menu_items','rss2021_add_search_box', 10, 2 );
+if ( ! function_exists( 'rss2021_add_search_box' ) ) :
 function rss2021_add_search_box( $items, $args ) {
-	// $items .= '<li>' . get_search_form( false ) . '</li>';
-	$items .= '<li><div id="search-icon"> <i class="fas fa-search"></i> </div></li>';
+	$items .= '<li><div id="mainsearch-icon"> <i class="fas fa-search"></i> </div></li>';
     return $items;
 }
+endif;
+add_filter( 'wp_nav_menu_items','rss2021_add_search_box', 10, 2 );
 
 /**
  * Implement the Custom Header feature.
