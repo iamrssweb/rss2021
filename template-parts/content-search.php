@@ -10,26 +10,31 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php
-			rss2021_posted_on();
-			rss2021_posted_by();
-			?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
+	<!-- thumbnail -->
 	<?php rss2021_post_thumbnail(); ?>
 
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
+	<header class="entry-header">
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+	</header><!-- .entry-header -->
 
-	<footer class="entry-footer">
-		<?php rss2021_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<div class="entry-content">
+		<?php
+		the_excerpt();
+		// the_content();
+
+		?>
+		<div class="entry-meta">Posted by <?php the_author(); ?> on <?php the_date(); ?></div>
+		<button onclick="window.location.href='<?php the_permalink(); ?>' " class="btn-readmore">Read more....</button>
+		<?php
+
+		wp_link_pages(
+			array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'rss2021' ),
+				'after'  => '</div>',
+			)
+		);
+		?>
+	</div><!-- .entry-content -->
+
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -15,16 +15,15 @@ get_header();
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title">
 					<?php
 					/* translators: %s: search query. */
 					printf( esc_html__( 'Search Results for: %s', 'rss2021' ), '<span>' . get_search_query() . '</span>' );
 					?>
-				</h1>
 			</header><!-- .page-header -->
 
 			<?php
 			/* Start the Loop */
+			?><section class="page-articles"><?php
 			while ( have_posts() ) :
 				the_post();
 
@@ -36,12 +35,15 @@ get_header();
 				get_template_part( 'template-parts/content', 'search' );
 
 			endwhile;
+			?></section><?php
 
 			the_posts_navigation();
 
 		else :
 
+			?><section class="page-articles"><?php
 			get_template_part( 'template-parts/content', 'none' );
+			?></section><?php
 
 		endif;
 		?>
@@ -49,5 +51,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

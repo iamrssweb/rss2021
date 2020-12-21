@@ -1,14 +1,14 @@
 const menuIcon = document.getElementById("menu-icon");
 const slideoutMenu = document.getElementById("mobile-navigation");
-const searchIcon = document.getElementById("search-icon");
+const searchIcon = document.getElementById("mainsearch-icon");
 const searchBox = document.getElementById("main-searchbox");
 
 searchIcon.addEventListener('click', function () {
-    if (searchBox.style.top == '3.5em') {
+    if (searchBox.style.top == '4em') {
         searchBox.style.top = '0';
         searchBox.style.pointerEvents = 'none';
     } else {
-        searchBox.style.top = '3.5em';
+        searchBox.style.top = '4em';
         searchBox.style.pointerEvents = 'auto';
     }
 });

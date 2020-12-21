@@ -47,9 +47,11 @@
 			);
 			?>
 		</nav><!-- #site-navigation -->
+
+		<!-- search: input box. Note the icon is added to the nav by functions.php -->
         <div id="main-searchbox">
-            <input type="text" placeholder="Search here...">
-        </div>
+            <?php  get_search_form(); ?>
+		</div>
 		<nav id="mobile-navigation">
 			<?php
 			wp_nav_menu(
