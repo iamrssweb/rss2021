@@ -62,10 +62,6 @@
 			?>
 		</article>
 
-		<footer class="entry-footer">
-			<?php rss2021_entry_footer(); ?>
-		</footer><!-- .entry-footer -->
-
 	</section>
 
 	<?php get_sidebar();?>
