@@ -18,13 +18,6 @@ get_header();
 
 			get_template_part( 'template-parts/content', get_post_type() );
 
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'rss2021' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'rss2021' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
-
 			// If comments are open and we have at least one comment, load up the comment template.
 			if ( comments_open() && get_comments_number() ) {
 				comments_template();

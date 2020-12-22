@@ -25,8 +25,14 @@ get_header();
 			// based on the slug of this page, do a query using that as category
 			?><header class="page-header"><?php the_title(); ?></header><?php
 
+			//Protect against arbitrary paged values
+			$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+
 			// pages will only display posts from a given, configurable, category
-			$args = array( 'category_name' => $slug ); 
+			$args = array(
+				'category_name'  => $slug,
+				'paged'          => $paged,
+			); 
  
 			// Variable to call WP_Query. 
 			$the_query = new WP_Query( $args ); 
@@ -39,7 +45,23 @@ get_header();
 					// use templates for the guts of what to return in HTML
     				get_template_part( 'template-parts/content', 'page' );
 	    		} // End the Loop 
-				?></section><?php
+				?>
+				</section>
+				<!-- Pagination -->
+	
+				<div class="pagination">
+					<?php 
+					$big = 999999999; // need an unlikely integer
+ 
+					echo paginate_links( array(
+						'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+						'format' => '?paged=%#%',
+						'current' => max( 1, get_query_var('paged') ),
+						'total' => $the_query->max_num_pages
+					) );
+					?>
+				</div>
+				<?php
 			} else { 
 				// If no posts match this query, output this text. 
 		    	_e( 'Sorry, no posts matched your criteria.', 'textdomain' ); 

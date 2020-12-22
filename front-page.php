@@ -13,7 +13,10 @@ get_header(); ?>
 
 <?php 
 // Front page will only display posts from a given, configurable, category
-$args = array( 'cat' => get_theme_mod( 'rss2021_home_page_category', 'homepage' ) ); 
+$args = array( 
+    'cat' => get_theme_mod( 'rss2021_home_page_category', 'homepage' ),
+    'posts_per_page' => -1,
+ ); 
  
 // Variable to call WP_Query. 
 $the_query = new WP_Query( $args ); 
