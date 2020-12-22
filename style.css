@@ -558,65 +558,27 @@ footer a {
 
 footer .wpforms-widget {
     background: #2c3d4a;
-    text-align: center;
     color: white;
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-footer .wpforms-widget .wpforms-field-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    width: 100%;
-    text-align: left;
+footer div.wpforms-container-full .wpforms-form button[type=submit] {
+    padding: 0.5em 1.5em;
+    transition: 0.4s;
+    font-weight: bold;
+    cursor: pointer;
+    background: #007cb0;
+    color: white;
+    font-size: 1.5em;
 }
 
-footer .wpforms-widget .wpforms-field-container>.wpforms-field-text,
-footer .wpforms-widget .wpforms-field-container>.wpforms-field-email {
-    flex: 1;
-    width: 100%;
+footer div.wpforms-container-full .wpforms-form button[type=submit]:hover {
+    color: #ffc222;
+    background: #2c3d4a;
+    text-decoration: none;
 }
-
-footer .wpforms-widget .wpforms-field-container>.wpforms-field-textarea {
-    flex: 1;
-    height: 10em;
-    align-self: stretch;
-}
-
-footer .wpforms-widget .wpforms-field-container>div:nth-of-type(1), 
-footer .wpforms-widget .wpforms-field-container>div:nth-of-type(2) {
-    flex: 1 1 0;
-    padding-top: 3em;
-    padding-bottom: 2em;
-}
-
-footer .wpforms-widget .wpforms-field-container>div:nth-of-type(3), 
-footer .wpforms-widget .wpforms-field-container>div:nth-of-type(4) {
-    flex: 100%;
-    order: 3;
-    padding-top: 1em;
-    padding-bottom: 3em;
-}
-
-footer .wpforms-widget .wpforms-field-container>div:nth-of-type(2) label {
-    align-self: flex-end;
-}
-
-footer .wpforms-widget .wpforms-field-container>div:nth-of-type(2) input {
-    align-self: flex-end;
-}
-
-footer .wpforms-widget .wpforms-field-container .wpforms-submit-container {
-    display: flex;
-    align-items: center;
-}
-
-
-
 /*--------------------------------------------*/
 
 /* Pages */
@@ -724,7 +686,22 @@ footer .wpforms-widget .wpforms-field-container .wpforms-submit-container {
 /* Media Queries */
 
 @media (max-width: 1024px) {
-    #site-navigation ul {
+    .has-small-font-size {
+        font-size: 0.75em;
+    }
+    
+    .has-medium-font-size {
+        font-size: 2em;
+    }
+    
+    .has-large-font-size {
+        font-size: 3em;
+    }
+    
+    .has-huge-font-size {
+        font-size: 4.5em;
+    }
+        #site-navigation ul {
         display: none
     }
     .menu-primary-container, #mainsearch-icon {
@@ -739,23 +716,6 @@ footer .wpforms-widget .wpforms-field-container .wpforms-submit-container {
     #mobile-navigation {
         display: block;
     }
-    .contact-form form {
-        flex-direction: column;
-    }
-    .contact-form div form>div input {
-        width: 100%;
-        align-self: flex-start;
-    }
-    .contact-form div form>div textarea {
-        width: 100%;
-        align-self: flex-start;
-    }
-    .contact-form form>div:nth-of-type(2) label {
-        padding-left: 0;
-    }
-    .contact-form form>div:nth-of-type(2) input {
-        align-self: flex-start;
-    }
     #blogpost {
         width: 100%;
         border-left: 0;
@@ -764,7 +724,7 @@ footer .wpforms-widget .wpforms-field-container .wpforms-submit-container {
         display: none;
     }
     .entry-content img {
-        height: calc(100vh / 3);
+        height: calc(100vh / 4);
     }
 }
 
@@ -798,37 +758,10 @@ footer .wpforms-widget .wpforms-field-container .wpforms-submit-container {
         width: 100%;
         height: auto;
     }
-    footer, .menu-link {
+    footer {
         flex-direction: column;
         align-items: center;
         text-align: center;
-    }
-    .menu-link {
-        justify-content: flex-start;
-        width: 100%;
-    }
-    #left-footer {
-        flex: 1;
-        border-right: none;
-        padding: 0;
-        text-align: center;
-    }
-    #right-footer {
-        background: #007cb0;
-        color: white;
-        padding: 0;
-        width: 100%;
-        text-align: center;
-    }
-    #right-footer a {
-        color: white;
-    }
-    #social-media-footer ul {
-        justify-content: center;
-    }
-    #social-media-footer a .fa-facebook {
-        color: white;
-        transition: 0.4s;
     }
     .entry-content img {
         height: calc(100vh / 5);
