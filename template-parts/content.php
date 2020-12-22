@@ -64,6 +64,6 @@
 
 	</section>
 
-	<?php get_sidebar();?>
+	<?php // for now, no sidebar.... get_sidebar();?>
 	
 </div><!-- post-container -->
