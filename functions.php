@@ -107,6 +107,7 @@ if (!function_exists('rss2021_setup')):
          * Gutenberg support
          * See https://www.billerickson.net/building-a-gutenberg-website/
          */
+        /* full and wide images */
         add_theme_support('align-wide');
 
         // -- Disable custom font sizes
