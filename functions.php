@@ -47,6 +47,11 @@ if (!function_exists('rss2021_setup')):
          * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
          */
         add_theme_support('post-thumbnails');
+        add_image_size('small', 300, 9999); // 300px wide unlimited height
+        add_image_size('medium-small', 450, 9999); // 300px wide unlimited height
+        add_image_size('xl', 1200, 9999); // 1200px wide unlimited height
+        add_image_size('xxl', 2000, 9999); // 2000px wide unlimited height
+        add_image_size('xxxl', 3000, 9999); // 3000px wide unlimited height
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus(
@@ -276,11 +281,26 @@ endif;
 add_action('wp_enqueue_scripts', 'rss2021_scripts');
 
 /**
+ * Add image size names to choose from
+ */
+if (!function_exists('rss2021_custom_add_image_size_names')):
+    function rss2021_custom_add_image_size_names($sizes) {
+        return array_merge($sizes, array(
+            'small' => __('Small'),
+            'medium-small' => __('Medium Small'),
+            'xl' => __('Extra Large'),
+            'xxl' => __('2x Extra Large'),
+            'xxxl' => __('3x Extra Large'),
+        ));
+    }
+endif;
+add_filter('image_size_names_choose', 'rss2021_custom_add_image_size_names');
+
+/**
  * Add a search menu item to the nav menus
  */
 if (!function_exists('rss2021_add_search_box')):
-    function rss2021_add_search_box($items, $args)
-{
+    function rss2021_add_search_box($items, $args) {
         $items .= '<li><div id="mainsearch-icon"> <i class="fas fa-search"></i> </div></li>';
         return $items;
     }
