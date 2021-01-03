@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Richard
 Author URI: http://www.itjustdoes.co.uk
 Description: Dragging into the 21st century
-Version: 1.0.5
+Version: 1.0.6
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -83,11 +83,12 @@ input:focus, textarea:focus {
 
 a {
     text-decoration: none;
-    color: black;
+    color: #007cb0;
 }
 
 a:hover {
     text-decoration: none;
+    color: #e22849;
 }
 
 /*--------------------------------------------*/
@@ -639,6 +640,7 @@ footer .copyright {
 
 #post-container {
     display: flex;
+    padding-top: 3em;
 }
 
 #blogpost {
