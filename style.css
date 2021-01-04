@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Richard
 Author URI: http://www.itjustdoes.co.uk
 Description: Dragging into the 21st century
-Version: 1.0.6
+Version: 1.0.7
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -444,7 +444,12 @@ article .entry-content {
 }
 
 /*--------------------------------------------*/
+/* The Events Calendar (shortcode block) */
+.ecs-event h4 {
+    background: white;
+}
 
+/*--------------------------------------------*/
 /* Front page articles (posts) */
 
 .post-page-home {
