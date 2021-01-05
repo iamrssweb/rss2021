@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Richard
 Author URI: http://www.itjustdoes.co.uk
 Description: Dragging into the 21st century
-Version: 1.0.0
+Version: 1.0.9
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -19,29 +19,10 @@ RSS2021 is based on Underscores https://underscores.me/, (C) 2012-2020 Automatti
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 */
 
-/* Implementation in Wordpress addtional CSS
-.post-21 .entry-header {
-	color: #ffc222;
-}
-.post-82 .article-container {
-	width: 60%;
-	right: 10em;
-	float: right;
-}
-.post-19 img, .post-17 img, .post-15 img {
-	filter: brightness(100%);
-}
-.post-19 .article-container, .post-17  .article-container, .post-15  .article-container {
-	color: #2c3d4a;
-}
-.post-19, .post-17, .post-15 {
-    min-height: 360px;
-*/
-
 body {
-    font-family: myriad-pro, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     font-size: 16px;
     margin: 0;
 }
@@ -58,8 +39,23 @@ h3 {
     font-size: 1.5em;
 }
 
+h4 {
+    color: white;
+    background-color: #007cb0;
+    width: 100%;
+    height: 2.2em;
+    line-height: 2em;
+    padding-left: 15px;
+    font-size: 1.2em;
+}
+
 p {
     line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* font awesome icons */
@@ -87,11 +83,12 @@ input:focus, textarea:focus {
 
 a {
     text-decoration: none;
-    color: black;
+    color: #007cb0;
 }
 
 a:hover {
     text-decoration: none;
+    color: #e22849;
 }
 
 /*--------------------------------------------*/
@@ -225,11 +222,17 @@ a:hover {
 }
 
 /*--------------------------------------------*/
+/* masthead - navigation */
+#masthead {
+    position: relative;
+    top: 0;
+    width: 100%;
+}
 
+/*--------------------------------------------*/
 /* Search box */
 
 /*--------------------------------------------*/
-
 /* Search icon */
 
 #mainsearch-icon {
@@ -245,8 +248,8 @@ a:hover {
 
 #main-searchbox {
     position: fixed;
-    right: 0;
     top: 0;
+    right: 0;
     width: 20em;
     pointer-events: none;
     z-index: 50;
@@ -280,7 +283,6 @@ a:hover {
 }
 
 /*--------------------------------------------*/
-
 /* Navigation */
 
 #site-navigation {
@@ -390,7 +392,12 @@ a:hover {
 }
 
 /*--------------------------------------------*/
-
+/* main content, that which is below the masthead */
+#primary {
+    position: relative;
+    top: 3em;
+}
+/*--------------------------------------------*/
 /* Sections */
 
 section {
@@ -447,7 +454,12 @@ article .entry-content {
 }
 
 /*--------------------------------------------*/
+/* The Events Calendar (shortcode block) */
+.ecs-event h4 {
+    background: white;
+}
 
+/*--------------------------------------------*/
 /* Front page articles (posts) */
 
 .post-page-home {
@@ -524,6 +536,8 @@ button:hover, .btn:hover, .btn-readmore:hover {
 /* Footer */
 
 footer {
+    position: relative;
+    top: 3em; /* push down the same amount that main (primary) is pushed down. */
     background: #2c3d4a;
     color: #007cb0;
     display: flex;
@@ -533,7 +547,10 @@ footer {
 }
 
 footer a {
-    color: #2c3d4a;
+    color: #007cb0;
+}
+footer a:hover {
+    color: #ffc222;
 }
 
 .top-decoration {
@@ -552,6 +569,14 @@ footer a {
     border-left: 12em solid transparent;
     border-right: 12em solid transparent;
     border-bottom: 6em solid #2c3d4a;
+}
+
+.menu-footer-container ul, .menu-footer-menu-container ul {
+    list-style-type: none;
+}
+
+.menu-footer-container #mainsearch-icon, .menu-footer-menu-container #mainsearch-icon {
+    display: none;
 }
 
 /* specifics for a WP Forms contact form */
@@ -579,6 +604,11 @@ footer div.wpforms-container-full .wpforms-form button[type=submit]:hover {
     background: #2c3d4a;
     text-decoration: none;
 }
+
+footer .copyright {
+    font-size: 0.5em;
+}
+
 /*--------------------------------------------*/
 
 /* Pages */
@@ -595,9 +625,9 @@ footer div.wpforms-container-full .wpforms-form button[type=submit]:hover {
 /* Pages */
 
 .page-header {
-    position: relative;
+/*    position: relative;
     top: 1.5em;
-    font-size: 2em;
+  */  font-size: 2em;
     display: block;
     padding: .25em 2em;
     background: #007cb0;
@@ -631,12 +661,14 @@ footer div.wpforms-container-full .wpforms-form button[type=submit]:hover {
 .page-links .current, .pagination .current {
     color: #e22849;
 }
+
 /*--------------------------------------------*/
 
 /* Single post */
 
 #post-container {
     display: flex;
+    padding-top: 3em;
 }
 
 #blogpost {
@@ -685,26 +717,35 @@ footer div.wpforms-container-full .wpforms-form button[type=submit]:hover {
 
 /* Media Queries */
 
+@media only screen and (min-width: 768px) {
+    .entry-content .wp-block-image:not(.alignwide):not(.alignfull)>img {
+        max-width: calc(8 * (100vw / 12) - 28px);
+    }
+}
+
+@media only screen and (min-width: 1168px) {
+    .entry-content .wp-block-image:not(.alignwide):not(.alignfull)>img {
+        max-width: calc(6 * (100vw / 12) - 28px);
+    }
+}
+
 @media (max-width: 1024px) {
     .has-small-font-size {
         font-size: 0.75em;
     }
-    
     .has-medium-font-size {
         font-size: 2em;
     }
-    
     .has-large-font-size {
         font-size: 3em;
     }
-    
     .has-huge-font-size {
         font-size: 4.5em;
     }
-        #site-navigation ul {
+    #site-navigation ul {
         display: none
     }
-    .menu-primary-container, #mainsearch-icon {
+    .menu-primary-container, #mainsearch-icon, .menu-header-menu-container {
         display: none;
     }
     #menu-icon {
@@ -723,9 +764,11 @@ footer div.wpforms-container-full .wpforms-form button[type=submit]:hover {
     #sidebar {
         display: none;
     }
+    /*
     .entry-content img {
         height: calc(100vh / 4);
     }
+    */
 }
 
 @media (max-width: 850px) {
@@ -763,9 +806,11 @@ footer div.wpforms-container-full .wpforms-form button[type=submit]:hover {
         align-items: center;
         text-align: center;
     }
+    /*
     .entry-content img {
         height: calc(100vh / 5);
     }
+    */
 }
 
 @media (max-width: 600px) {
@@ -781,9 +826,11 @@ footer div.wpforms-container-full .wpforms-form button[type=submit]:hover {
     .has-huge-font-size {
         font-size: 1.5em;
     }
+    /*
     .entry-content img {
         height: calc(100vh / 8);
     }
+    */
 }
 
 @media (min-width:851px) {

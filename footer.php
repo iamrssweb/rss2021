@@ -18,7 +18,8 @@
                 <?php
 			    if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('page-footer-1') ) { }
                 ?>
-                <div>
+                <div class="copyright">
+                    &copy;
                     <?php
                     $my_theme = wp_get_theme( $stylesheet, $theme_root );
                     echo $my_theme->get( 'AuthorURI'), " ";
