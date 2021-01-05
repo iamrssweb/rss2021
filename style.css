@@ -91,6 +91,9 @@ a:hover {
     color: #e22849;
 }
 
+.font-lobster {
+    font-family: Lobster, Helvetica, Arial, sans-serif;
+}
 /*--------------------------------------------*/
 
 /* Gutenberging */
@@ -587,6 +590,9 @@ footer .wpforms-widget {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+footer .wpforms-widget .widget-title {
+    font-family: Lobster, Helvetica, Arial, sans-serif;
 }
 
 footer div.wpforms-container-full .wpforms-form button[type=submit] {
