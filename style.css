@@ -559,7 +559,7 @@ footer a:hover {
     border-bottom: 6em solid #2c3d4a;
 }
 
-.menu-footer-container ul {
+.menu-footer-container ul, .menu-footer-menu-container ul {
     list-style-type: none;
 }
 
