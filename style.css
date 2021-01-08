@@ -19,6 +19,21 @@ RSS2021 is based on Underscores https://underscores.me/, (C) 2012-2020 Automatti
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 */
 
+@font-face {
+    font-family: 'transportmedium';
+    src: url("fonts/trafficsigns/TransportMedium.ttf") format("truetype");
+}
+  
+@font-face {
+    font-family: 'transportheavy';
+    src: url("fonts/trafficsigns/TransportHeavy.ttf") format("truetype");
+}
+  
+@font-face {
+    font-family: 'transportvariable';
+    src: url("fonts/trafficsigns/VMS.ttf") format("truetype");
+}
+  
 body {
     font-family: Helvetica, Arial, sans-serif;
     font-style: normal;
@@ -457,12 +472,6 @@ article .entry-content {
 }
 
 /*--------------------------------------------*/
-/* The Events Calendar (shortcode block) */
-.ecs-event h4 {
-    background: white;
-}
-
-/*--------------------------------------------*/
 /* Front page articles (posts) */
 
 .post-page-home {
@@ -498,7 +507,6 @@ article .entry-content {
 }
 
 /*--------------------------------------------*/
-
 /* Comments sections */
 
 #comments {
@@ -508,7 +516,6 @@ article .entry-content {
 }
 
 /*--------------------------------------------*/
-
 /* Buttons */
 
 button {
@@ -535,7 +542,6 @@ button:hover, .btn:hover, .btn-readmore:hover {
 }
 
 /*--------------------------------------------*/
-
 /* Footer */
 
 footer {
@@ -616,7 +622,6 @@ footer .copyright {
 }
 
 /*--------------------------------------------*/
-
 /* Pages */
 
 .page-heading {
@@ -642,7 +647,6 @@ footer .copyright {
 }
 
 /*--------------------------------------------*/
-
 /* Pagination */
 
 .page-links, .pagination {
@@ -669,7 +673,6 @@ footer .copyright {
 }
 
 /*--------------------------------------------*/
-
 /* Single post */
 
 #post-container {
@@ -707,7 +710,6 @@ footer .copyright {
 }
 
 /*--------------------------------------------*/
-
 /* Sidebar */
 
 #sidebar {
@@ -719,8 +721,41 @@ footer .copyright {
     padding: 0 2em;
 }
 
-/*--------------------------------------------*/
+/*--------------------------------------------*
+ * Plugin styling for this theme
+ *--------------------------------------------*/
 
+/*--------------------------------------------*/
+/* The Events Calendar (shortcode block) */
+.ecs-event h4 {
+    background: white;
+}
+
+/*--------------------------------------------*/
+/* announce ticker Ditty News Ticker */
+.mtphr-dnt-widget .widget-title {
+    color: red;
+    background: #007cb0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: 1.2em;
+    font-weight: bold;
+    height: 2.5em;
+    line-height: 2.5em;
+    display: block;
+}
+  
+.mtphr-dnt {
+    color: #ffc222;
+    background: #2c3d4a;
+    text-transform: lowercase;
+    font-family: transportvariable;
+    font-size: 3em;
+    line-height: 1em;
+}
+  
+/*--------------------------------------------*/
 /* Media Queries */
 
 @media only screen and (min-width: 768px) {
