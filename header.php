@@ -19,9 +19,10 @@
 
 	<!-- RSS2021 specific -->
     <link rel="stylesheet" href="https://use.typekit.net/kpx8cec.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster" type="text/css">
     <script src="https://kit.fontawesome.com/60dfbc98f0.js" crossorigin="anonymous"></script>
 
-	<!-- Facicon -->
+	<!-- Favicon -->
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
 
 	<?php wp_head(); ?>
