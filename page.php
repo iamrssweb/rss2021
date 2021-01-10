@@ -32,7 +32,7 @@ get_header();
 			$args = array(
 				'category_name'  => $slug,
 				'paged'          => $paged,
-				'orderby' => 'modified',
+				//'orderby'        => 'modified',
 			); 
  
 			// Variable to call WP_Query. 
