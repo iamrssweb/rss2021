@@ -19,6 +19,7 @@ RSS2021 is based on Underscores https://underscores.me/, (C) 2012-2020 Automatti
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 */
 
+/*
 @font-face {
     font-family: 'transportmedium';
     src: url("fonts/trafficsigns/TransportMedium.ttf") format("truetype");
@@ -33,10 +34,11 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
     font-family: 'transportvariable';
     src: url("fonts/trafficsigns/VMS.ttf") format("truetype");
 }
+*/
 
 @font-face {
     font-family: 'dotmatrix';
-    src: url("fonts/dotmatrix/BPdots.otf") format("truetype");
+    src: url("https://www.iamroadsmartsolent.org.uk/solent/wp-content/themes/rss2021/fonts/dotmatrix/BPdots.otf") format("truetype");
 }
 
 body {
