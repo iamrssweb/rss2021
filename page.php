@@ -32,7 +32,7 @@ get_header();
 			$args = array(
 				'category_name'  => $slug,
 				'paged'          => $paged,
-				'orderby' => 'modified',
+				//'orderby'        => 'modified',
 			); 
  
 			// Variable to call WP_Query. 
@@ -41,6 +41,17 @@ get_header();
 			if ( $the_query->have_posts() ) {
 				// Start the Loop 
 				?><section class="page-articles"><?php
+				
+				/*
+				echo $slug;
+				
+				if ( $slug == 'training' ) {
+					if ( function_exists('ditty_news_ticker') ) {
+						ditty_news_ticker(10736);
+					}
+				}
+				*/
+				
 				while ( $the_query->have_posts() ) { 
 					$the_query->the_post();
 					// use templates for the guts of what to return in HTML

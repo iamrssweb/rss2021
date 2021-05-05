@@ -16,6 +16,7 @@ get_header(); ?>
 $args = array( 
     'cat' => get_theme_mod( 'rss2021_home_page_category', 'homepage' ),
     'posts_per_page' => -1,
+	'orderby'        => 'modified',
  ); 
  
 // Variable to call WP_Query. 
