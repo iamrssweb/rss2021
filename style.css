@@ -4,8 +4,8 @@ Theme URI: http://underscores.me/
 Author: Richard
 Author URI: http://www.itjustdoes.co.uk
 Description: Dragging into the 21st century
-Version: 1.0.11
-Tested up to: 5.4
+Version: 1.1.2
+Tested up to: 5.7
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: LICENSE
@@ -23,17 +23,22 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
     font-family: 'transportmedium';
     src: url("fonts/trafficsigns/TransportMedium.ttf") format("truetype");
 }
-  
+
 @font-face {
     font-family: 'transportheavy';
     src: url("fonts/trafficsigns/TransportHeavy.ttf") format("truetype");
 }
-  
+
 @font-face {
     font-family: 'transportvariable';
     src: url("fonts/trafficsigns/VMS.ttf") format("truetype");
 }
-  
+
+@font-face {
+    font-family: 'dotmatrix';
+    src: url("fonts/dotmatrix/BPdots.otf") format("truetype");
+}
+
 body {
     font-family: Helvetica, Arial, sans-serif;
     font-style: normal;
@@ -749,8 +754,8 @@ footer .copyright {
 .mtphr-dnt {
     color: #ffc222;
     background: #2c3d4a;
-    text-transform: lowercase;
-    font-family: transportvariable;
+    /* text-transform: lowercase; */
+    font-family: dotmatrix;
     font-size: 3em;
     line-height: 1em;
 }
