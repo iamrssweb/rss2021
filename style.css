@@ -4,8 +4,8 @@ Theme URI: http://underscores.me/
 Author: Richard
 Author URI: http://www.itjustdoes.co.uk
 Description: Dragging into the 21st century
-Version: 1.1.2
-Tested up to: 5.7
+Version: 1.2.0
+Tested up to: 5.8
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: LICENSE
@@ -222,7 +222,7 @@ a:hover {
     background-color: #ffc222;
 }
 
-.has-rss-red-cbackground-olor {
+.has-rss-red-cbackground-color {
     background-color: #e22849;
 }
 
@@ -242,14 +242,21 @@ a:hover {
     background-color: #007ac1;
 }
 
-.has-roadsign-yellow-cbackground-olor {
+.has-roadsign-yellow-cbackground-color {
     background-color: #ffd000;
+}
+
+/*--------------------------------------------*/
+/* sizing - all sizes include margins, padding 
+   and borders */
+   * {
+    box-sizing: border-box;
 }
 
 /*--------------------------------------------*/
 /* masthead - navigation */
 #masthead {
-    position: relative;
+    position: absolute;
     top: 0;
     width: 100%;
 }
@@ -272,7 +279,7 @@ a:hover {
 }
 
 #main-searchbox {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     width: 20em;
@@ -315,7 +322,7 @@ a:hover {
     background: #2c3d4a;
     width: 100%;
     margin: 0;
-    position: fixed;
+    position: absolute;
     top: 0;
     font-size: 1.25em;
     display: flex;
@@ -379,7 +386,7 @@ a:hover {
 #mobile-navigation {
     display: none;
     background: #2c3d4a;
-    position: fixed;
+    position: absolute;
     top: 0;
     transition: 0.4s;
     margin-top: 3em;
@@ -416,9 +423,30 @@ a:hover {
     text-align: center;
 }
 
+.masthead-bottom-decoration {
+    position: absolute;
+    top: 3.7em;
+    width: 100%;
+    height: 6vw;
+    background: transparent;
+}
+
+.masthead-bottom-decoration span {
+    position: absolute;
+    top: 0;
+    flex: 1;
+    height: 0;
+    width: 0;
+    margin: 0;
+    border-top: 6vw solid #2c3d4a;
+    border-left: 0vw;
+    border-right: 100vw solid transparent;
+    border-bottom: 0vw;
+}
+
 /*--------------------------------------------*/
 /* main content, that which is below the masthead */
-#primary {
+#body-content {
     position: relative;
     top: 3em;
 }
@@ -497,7 +525,7 @@ article .entry-content {
 
 .category-overlay .article-container {
     position: absolute;
-    top: 2em;
+    top: 3em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -553,7 +581,7 @@ button:hover, .btn:hover, .btn-readmore:hover {
 
 footer {
     position: relative;
-    top: 3em; /* push down the same amount that main (primary) is pushed down. */
+    top: calc(3.7em + 8vw); /* push down the same amount that main (primary) is pushed down. */
     background: #2c3d4a;
     color: #007cb0;
     display: flex;
@@ -569,22 +597,17 @@ footer a:hover {
     color: #ffc222;
 }
 
-.top-decoration {
-    width: 100%;
-    height: 6em;
-    text-align: center;
-    background: white;
-}
-
-.top-decoration span {
-    flex: 1;
+.footer-top-decoration {
+    position: absolute;
+    top: -6vw;
+    left: -9vw;
     height: 0;
     width: 0;
     margin: 0;
     border-top: 0;
-    border-left: 12em solid transparent;
-    border-right: 12em solid transparent;
-    border-bottom: 6em solid #2c3d4a;
+    border-left: 110vw solid transparent;
+    border-right: 0;
+    border-bottom: 6.6vw solid #2c3d4a;
 }
 
 .menu-footer-container ul, .menu-footer-menu-container ul {
@@ -643,10 +666,8 @@ footer .copyright {
 /* Pages */
 
 .page-header {
-/*    position: relative;
-    top: 1.5em;
-  */  font-size: 2em;
-    display: block;
+    font-size: 2em;
+    display: none;
     padding: .25em 2em;
     background: #007cb0;
     color: white;

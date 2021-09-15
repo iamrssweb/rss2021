@@ -33,37 +33,5 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'rss2021' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<nav id="site-navigation" class="main-navigation">
-			<?php
-			the_custom_logo();
-			?>
-
-			<div id="menu-icon">
-                <i class="fas fa-bars"></i>
-            </div>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-
-		<!-- search: input box. Note the icon is added to the nav by functions.php -->
-        <div id="main-searchbox">
-            <?php  get_search_form(); ?>
-		</div>
-		<nav id="mobile-navigation">
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-2',
-					'menu_id'        => 'mobile-menu',
-				)
-			);
-			?>
-		</nav>
-	</header><!-- #masthead -->
+	<div id="body-content">
+		<!-- The rest of the header is found in the footer. This is for CSS placement -->
